@@ -106,9 +106,7 @@ public class Script extends BaseTransform<ScriptMeta, ScriptData> implements ITr
   }
 
   private void determineUsedFields(IRowMeta row) {
-    if (row == null) {
-      return;
-    }
+
 
     int nr = 0;
     // Count the occurrences of the values.
@@ -157,9 +155,9 @@ public class Script extends BaseTransform<ScriptMeta, ScriptData> implements ITr
     if (first) {
       first = false;
 
-      if (rowMeta == null) {
-        rowMeta = new RowMeta();
-      }
+      //if (rowMeta == null) {
+      //  rowMeta = new RowMeta();
+      //}
       data.outputRowMeta = rowMeta.clone();
       meta.getFields(data.outputRowMeta, getTransformName(), null, null, this, metadataProvider);
 
